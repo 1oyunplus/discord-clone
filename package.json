@@ -1,0 +1,11 @@
+{
+  "name": "discord-clone",
+  "version": "1.0.0",
+  "description": "Discord Clone - Electron + WebRTC + Socket.io",
+  "scripts": {
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build"
+  }
+}
