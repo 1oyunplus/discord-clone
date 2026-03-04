@@ -5,7 +5,7 @@ let socket = null;
 
 export const connectSocket = () => {
   const token = getToken();
-  socket = io('http://localhost:3001', { auth: { token } });
+  socket = io(import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:3001', { auth: { token } });
   return socket;
 };
 
