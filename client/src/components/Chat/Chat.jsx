@@ -9,7 +9,7 @@ export default function Chat({ room, user, socket }) {
 
   useEffect(() => {
     api.get(`/messages/${room.id}`)
-      .then(({ data }) => setMessages(data))
+      .then(({ data }) => setMessages(Array.isArray(data) ? data : []))
       .catch(console.error);
   }, [room.id]);
 
