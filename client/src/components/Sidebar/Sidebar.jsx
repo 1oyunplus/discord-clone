@@ -10,7 +10,7 @@ export default function Sidebar({ user, socket, activeRoom, onSelectRoom, onLogo
   const [connectedVoiceRoom, setConnectedVoiceRoom] = useState(null);
 
   useEffect(() => {
-    api.get('/rooms').then(({ data }) => setRooms(data)).catch(console.error);
+	api.get('/rooms').then(({ data }) => setRooms(Array.isArray(data) ? data : [])).catch(console.error);
   }, []);
 
   useEffect(() => {
